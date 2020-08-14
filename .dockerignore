@@ -1,0 +1,13 @@
+#env
+.env
+
+#node_modules
+node_modules
+build
+
+#docker
+.dockerignore
+docker-compose.yml
+
+#git
+.git.gitignore

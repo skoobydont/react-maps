@@ -1,0 +1,16 @@
+version: '3'
+
+services: 
+    react:
+        build: 
+            context: ./
+            dockerfile: ./Dockerfile
+        image: nodejs
+        container_name: reactmaps
+        env_file: .env
+        expose: 
+            - 3000
+        ports:
+            - "3000:3000"
+        command: npm start
+        stdin_open: true

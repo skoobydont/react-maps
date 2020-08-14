@@ -10,8 +10,7 @@ To run this application:
         <ul>
             <li>this runs docker and gives back the terminal session (which will help with stopping the container later)</li>
         </ul>
-    <li>
-    <li>After the fun ends, go to <a href="http://localhost:3000">localhost:3000</a> and the app should be running<li>
+    <li>After the fun ends, go to <a href="http://localhost:3000">localhost:3000</a> and the app should be running</li>
 </ol>
 
 ## Once you're ready to call it a day

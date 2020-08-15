@@ -1,20 +1,29 @@
+#client setup
 #use node image
-FROM node:13.12.0-alpine
+FROM node:13.12.0-alpine as client
 
 #create app work directory
-WORKDIR /
-
+WORKDIR /usr/app/client/
 #copy json files to working directory
-COPY package.json ./
-
+COPY client/package*.json ./
 #install app dependencies
-RUN npm install --verbose
-
+RUN npm install -qy
 #bundle app source
-COPY . .
-
-#expose port 8080 and map to docker daemon
-EXPOSE 3000
-
+COPY client/ ./
 #run react app
-CMD ["npm", "start"]
+RUN npm run build
+
+#setup server
+FROM node:13.12.0-alpine as server
+COPY --from=client /usr/app/client/build/ ./client/build/
+
+WORKDIR /usr/app/server/
+COPY server/package*.json ./
+RUN npm install -qy
+COPY server/ ./
+
+ENV PORT 8000
+
+EXPOSE 8000
+
+CMD ["npm","start"]

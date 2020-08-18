@@ -1,4 +1,5 @@
 import React from 'react';
+import Map from './Map';
 import logo from './logo.svg';
 import './App.css';
 
@@ -12,6 +13,10 @@ const App = () => {
           Edit <code>src/App.js</code> and save to reload.
         </p>
       </header>
+      <div>
+        Map Section
+        <Map />
+      </div>
     </div>
   );
 }

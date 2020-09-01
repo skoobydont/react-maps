@@ -6,7 +6,7 @@ To run this application:
 <ol>
     <li>Pull Branch</li>
     <li>Ensure Docker version with command <code>docker --version</code></li>
-    <li>Run <code>docker-compose up -d --build</code>
+    <li>For a development environment, run <code>docker-compose -f docker-compose-development.yml up -d --build</code>
         <ul>
             <li>this runs docker and gives back the terminal session (which will help with stopping the container later)</li>
         </ul>
